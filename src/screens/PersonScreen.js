@@ -121,7 +121,7 @@ import {
               </View>
               <View className=" px-2 items-center">
                 <Text className="text-white font-semibold">Popularity</Text>
-                <Text className="text-neutral-300 text-sm">{person?.popularity.toFixed(2)} %</Text>
+                <Text className="text-neutral-300 text-sm">{person?.popularity?.toFixed(2)} %</Text>
               </View>
             </View>
   
