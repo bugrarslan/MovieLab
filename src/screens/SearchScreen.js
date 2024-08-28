@@ -22,7 +22,6 @@ import {
     const navigation = useNavigation();
     const [results, setResults] = useState([]);
     const [loading, setLoading] = useState(false);
-    // let movieName = "Ant-Man and the Wasp: Quantumania";
   
     const handleSearch = value => {
       if (value && value.length > 2) {
@@ -35,7 +34,6 @@ import {
         }).then((data) => {
           setLoading(false);
           if (data && data.results) setResults(data.results);
-          // console.log("search results", data);
         })
       } else {
         setLoading(false);
@@ -46,17 +44,17 @@ import {
     const handleTextDebounce = useCallback(debounce(handleSearch, 400), [] );
   
     return (
-      <SafeAreaView className="bg-neutral-800 flex-1">
-        <View className="mx-4 mb-3 flex-row justify-between items-center border border-neutral-500 rounded-full">
+      <SafeAreaView className="flex-1 bg-neutral-800">
+        <View className="flex-row items-center justify-between mx-4 mb-3 border rounded-full border-neutral-500">
           <TextInput
           onChangeText={handleTextDebounce}
             placeholder="Search Movie"
             placeholderTextColor="lightgray"
-            className="pb-1 pl-6 flex-1 text-base font-semibold text-white tracking-wide"
+            className="flex-1 pb-1 pl-6 text-base font-semibold tracking-wide text-white"
           />
           <TouchableOpacity
             onPress={() => navigation.goBack()}
-            className="rounded-full p-3 m-1 bg-neutral-500"
+            className="p-3 m-1 rounded-full bg-neutral-500"
           >
             <XMarkIcon size={25} color="white" strokeWidth={2} />
           </TouchableOpacity>
@@ -70,24 +68,24 @@ import {
             contentContainerStyle={{ paddingHorizontal: 15 }}
             className="space-y-3"
           >
-            <Text className="text-white font-semibold ml-1">
+            <Text className="ml-1 font-semibold text-white">
               Results ({results.length})
             </Text>
-            <View className="flex-row justify-between flex-wrap">
+            <View className="flex-row flex-wrap justify-between">
               {results.map((item, index) => {
                 return (
                   <TouchableWithoutFeedback
                     key={index}
                     onPress={() => navigation.navigate("Movie", item)}
                   >
-                    <View className="space-y-2 mb-4">
+                    <View className="mb-4 space-y-2">
                       <Image
                         className="rounded-2xl"
                         // source={require("../assets/images/moviePoster2.png")}
                         source={{ uri: image185(item?.poster_path) || fallbackMoviePoster}}
                         style={{ width: width * 0.44, height: height * 0.3 }}
                       />
-                      <Text className="text-neutral-300 ml-1">
+                      <Text className="ml-1 text-neutral-300">
                         {item?.title.length > 22
                           ? item?.title.slice(0, 22) + "..."
                           : item?.title}

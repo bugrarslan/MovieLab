@@ -36,3 +36,5 @@ yarn-error.*
 
 
 src/constants/index.js
+android/
+ios/

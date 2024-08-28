@@ -62,7 +62,7 @@ import {
           }
         >
           <TouchableOpacity
-            className="rounded-xl p-1"
+            className="p-1 rounded-xl"
             style={styles.background}
             onPress={() => navigation.goBack()}
           >
@@ -88,7 +88,7 @@ import {
                 shadowRadius: 40,
               }}
             >
-              <View className="items-center rounded-full overflow-hidden h-72 w-72 border-2 border-neutral-500">
+              <View className="items-center overflow-hidden border-2 rounded-full h-72 w-72 border-neutral-500">
                 <Image
                   // source={require("../assets/images/castImage1.png")}
                   source={{uri: image342(person?.profile_path) || fallbackPersonImage}}
@@ -98,36 +98,36 @@ import {
             </View>
   
             <View className="mt-6">
-              <Text className="text-3xl text-white font-bold text-center">
+              <Text className="text-3xl font-bold text-center text-white">
                 {person?.name}
               </Text>
-              <Text className="text-base text-neutral-500 text-center">
+              <Text className="text-base text-center text-neutral-500">
                 {person?.place_of_birth}
               </Text>
             </View>
   
-            <View className="mx-3 p-4 mt-6 flex-row justify-between items-center bg-neutral-700 rounded-full">
-              <View className="border-r-2 border-r-neutral-400 px-2 items-center">
-                <Text className="text-white font-semibold">Gender</Text>
-                <Text className="text-neutral-300 text-sm">{person?.gender === 1 ? 'Female' : 'Male'}</Text>
+            <View className="flex-row items-center justify-between p-4 mx-3 mt-6 rounded-full bg-neutral-700">
+              <View className="items-center px-2 border-r-2 border-r-neutral-400">
+                <Text className="font-semibold text-white">Gender</Text>
+                <Text className="text-sm text-neutral-300">{person?.gender === 1 ? 'Female' : 'Male'}</Text>
               </View>
-              <View className="border-r-2 border-r-neutral-400 px-2 items-center">
-                <Text className="text-white font-semibold">Birthday</Text>
-                <Text className="text-neutral-300 text-sm">{person?.birthday}</Text>
+              <View className="items-center px-2 border-r-2 border-r-neutral-400">
+                <Text className="font-semibold text-white">Birthday</Text>
+                <Text className="text-sm text-neutral-300">{person?.birthday}</Text>
               </View>
-              <View className="border-r-2 border-r-neutral-400 px-2 items-center">
-                <Text className="text-white font-semibold">Known For</Text>
-                <Text className="text-neutral-300 text-sm">{person?.known_for_department}</Text>
+              <View className="items-center px-2 border-r-2 border-r-neutral-400">
+                <Text className="font-semibold text-white">Known For</Text>
+                <Text className="text-sm text-neutral-300">{person?.known_for_department}</Text>
               </View>
-              <View className=" px-2 items-center">
-                <Text className="text-white font-semibold">Popularity</Text>
-                <Text className="text-neutral-300 text-sm">{person?.popularity?.toFixed(2)} %</Text>
+              <View className="items-center px-2 ">
+                <Text className="font-semibold text-white">Popularity</Text>
+                <Text className="text-sm text-neutral-300">{person?.popularity?.toFixed(2)} %</Text>
               </View>
             </View>
   
-            <View className="my-6 mx-4 space-y-2">
-              <Text className="text-white text-lg">Biography</Text>
-              <Text className="text-neutral-400 tracking-wide">
+            <View className="mx-4 my-6 space-y-2">
+              <Text className="text-lg text-white">Biography</Text>
+              <Text className="tracking-wide text-neutral-400">
                 {person?.biography || "No biography available"}
               </Text>
             </View>
