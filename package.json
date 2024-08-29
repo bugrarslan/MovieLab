@@ -10,10 +10,8 @@
     "postinstall": "patch-package"
   },
   "dependencies": {
-    "@react-navigation/drawer": "^6.6.15",
     "@react-navigation/native": "^6.1.17",
     "@react-navigation/native-stack": "^6.9.26",
-    "@reduxjs/toolkit": "^2.2.5",
     "axios": "^1.7.2",
     "deprecated-react-native-prop-types": "^5.0.0",
     "expo": "^51.0.31",
@@ -31,7 +29,8 @@
     "react-native-screens": "3.31.1",
     "react-native-snap-carousel": "^3.9.1",
     "react-native-svg": "15.2.0",
-    "react-redux": "^9.1.2"
+    "expo-image": "~1.12.15",
+    "expo-system-ui": "~3.0.7"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",

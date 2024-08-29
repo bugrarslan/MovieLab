@@ -1,32 +1,33 @@
 {
   "expo": {
-    "name": "movieApp",
-    "slug": "movieApp",
+    "name": "movieLab",
+    "slug": "movieLab",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
-    "userInterfaceStyle": "light",
+    "icon": "./assets/movieLab.png",
+    "userInterfaceStyle": "automatic",
     "splash": {
-      "image": "./assets/splash.png",
-      "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "image": "./assets/movieLab-splash.png",
+      "resizeMode": "cover",
+      "backgroundColor": "#000000"
     },
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.bugrarslan.movieLab"
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
+        "foregroundImage": "./assets/movieLab.png",
+        "backgroundColor": "#000000"
       },
-      "package": "com.bugrarslan.movieApp"
+      "package": "com.bugrarslan.movieLab"
     },
     "web": {
       "favicon": "./assets/favicon.png"
     },
     "extra": {
       "eas": {
-        "projectId": "fea283cb-865d-4725-a778-2ccae698d4e8"
+        "projectId": "897d29ac-e168-49d1-827e-785ee421b96c"
       }
     }
   }

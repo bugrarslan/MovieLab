@@ -5,14 +5,12 @@ import {
   TouchableOpacity,
   Platform,
   Dimensions,
-  Image,
 } from "react-native";
 import React, { useEffect, useState } from "react";
 import { useNavigation, useRoute } from "@react-navigation/native";
 import { HeartIcon } from "react-native-heroicons/solid";
 import { ChevronLeftIcon } from "react-native-heroicons/outline";
 import { styles } from "../theme";
-import { theme } from "../theme";
 import { LinearGradient } from "expo-linear-gradient";
 import Cast from "../components/Cast";
 import MovieList from "../components/MovieList";
@@ -24,6 +22,7 @@ import {
   image500,
 } from "../api/moviedb";
 import { SafeAreaView } from "react-native-safe-area-context";
+import { Image } from "expo-image";
 
 var { width, height } = Dimensions.get("window");
 const ios = Platform.OS === "ios";
@@ -86,9 +85,10 @@ export default function MovieScreen() {
         ) : (
           <View>
             <Image
-              // source={require("../assets/images/moviePoster2.png")}
               source={{ uri: image500(movie?.poster_path) }}
               style={{ width, height: height * 0.55 }}
+              transition={1000}
+              contentFit="cover"
             />
             <LinearGradient
               colors={["transparent", "rgba(23,23,23,0.8)", "rgba(23,23,23,1)"]}

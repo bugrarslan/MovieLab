@@ -9,14 +9,13 @@ import {
   import { SafeAreaView } from "react-native-safe-area-context";
   import React, { useEffect, useState } from "react";
   import { styles } from "../theme";
-  import { theme } from "../theme";
   import { ChevronLeftIcon } from "react-native-heroicons/outline";
   import { HeartIcon } from "react-native-heroicons/solid";
   import { useNavigation, useRoute } from "@react-navigation/native";
-  import { Image } from "react-native";
   import MovieList from "../components/MovieList";
   import Loading from "../components/Loading";
   import { fallbackPersonImage, fetchPersonDetails, fetchPersonMovies, image342 } from "../api/moviedb";
+import { Image } from "expo-image";
   
   const { width, height } = Dimensions.get("window");
   const ios = Platform.OS === "ios";
@@ -90,9 +89,10 @@ import {
             >
               <View className="items-center overflow-hidden border-2 rounded-full h-72 w-72 border-neutral-500">
                 <Image
-                  // source={require("../assets/images/castImage1.png")}
                   source={{uri: image342(person?.profile_path) || fallbackPersonImage}}
                   style={{ height: height * 0.43, width: width * 0.74 }}
+                  contentFit="cover"
+                  transition={1000}
                 />
               </View>
             </View>

@@ -1,24 +1,35 @@
+//android eas build -p android --profile preview
+// {
+//   "build": {
+//     "preview": {
+//       "android": {
+//         "buildType": "apk"
+//       }
+//     },
+//     "preview2": {
+//       "android": {
+//         "gradleCommand": ":app:assembleRelease"
+//       }
+//     },
+//     "preview3": {
+//       "developmentClient": true
+//     },
+//     "preview4": {
+//       "distribution": "internal"
+//     },
+//     "production": {}
+//   }
+// }
+
+//ios eas build -p ios --profile preview
 {
-  "cli": {
-    "version": ">= 9.1.0"
-  },
   "build": {
-    "development": {
-      "developmentClient": true,
-      "distribution": "internal"
-    },
     "preview": {
       "ios": {
         "simulator": true
-      },
-      "android": {
-        "buildType": "apk"
       }
     },
-    "production": {
-    }
-  },
-  "submit": {
     "production": {}
   }
 }
+

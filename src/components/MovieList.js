@@ -5,12 +5,12 @@ import {
   ScrollView,
   TouchableWithoutFeedback,
   Dimensions,
-  Image,
 } from "react-native";
 import React from "react";
 import { styles } from "../theme";
 import { useNavigation } from "@react-navigation/native";
 import { image185 } from "../api/moviedb";
+import { Image } from "expo-image";
 
 var { width, height } = Dimensions.get("window");
 
@@ -49,7 +49,6 @@ export default function MovieList({ title, data, hideSeeAll }) {
             >
               <View className="mr-4 space-y-1">
                 <Image
-                  // source={require("../assets/images/moviePoster2.png")}
                   source={
                     item.poster_path
                       ? { uri: image185(item.poster_path) }
@@ -57,6 +56,8 @@ export default function MovieList({ title, data, hideSeeAll }) {
                   }
                   style={{ width: width * 0.33, height: height * 0.22 }}
                   className="rounded-3xl"
+                  contentFit="cover"
+                  transition={1000}
                 />
                 <Text className="ml-1 text-neutral-300">
                   {movieName.length > 16

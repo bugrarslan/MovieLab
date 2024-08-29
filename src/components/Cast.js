@@ -1,6 +1,7 @@
-import { View, Text, ScrollView, TouchableOpacity, Image } from "react-native";
+import { View, Text, ScrollView, TouchableOpacity } from "react-native";
 import React from "react";
 import { image185, fallbackPersonImage } from "../api/moviedb";
+import { Image } from "expo-image";
 
 export default function Cast({ cast, navigation }) {
   return (
@@ -21,11 +22,12 @@ export default function Cast({ cast, navigation }) {
               >
                 <View className="items-center w-20 h-20 overflow-hidden border rounded-full border-neutral-500">
                   <Image
-                    // source={require('../assets/images/castImage1.png')}
                     source={{
                       uri: image185(person.profile_path) || fallbackPersonImage,
                     }}
                     className="w-20 h-24 rounded-2xl"
+                    contentFit="cover"
+                    transition={1000}
                   />
                 </View>
 
